@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@theme {
+  --color-surface-primary: #fbf9f5;
+  --color-on-surface: #31332f;
+  --color-inverse-surface: #0e0e0d;
+  --color-primary-brand: #785a1a;
+  --color-primary-container: #fbd185;
+  --color-secondary-brand: #625e5b;
+  --color-tertiary-brand: #6b5d49;
+  --color-surface-low: #f5f4ef;
+  --color-surface-container: #efeee9;
+  --color-outline-variant: #b2b2ad;
+  --color-accent-color: #E8D8C4;
+  --color-primary-override: #C5A059;
+
+  --font-headline: "Noto Serif", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-surface-primary);
+    color: var(--color-on-surface);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headline);
+  }
+}
+
+.glassmorphism {
+  background-color: color-mix(in srgb, var(--color-surface-primary) 70%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.glassmorphism-floating {
+  background-color: color-mix(in srgb, var(--color-surface-primary) 80%, transparent);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 10px 40px rgba(49, 51, 47, 0.05);
+}
+
+.border-bottom-only {
+  border-bottom: 1px solid color-mix(in srgb, var(--color-outline-variant) 30%, transparent);
+  outline: none;
+  transition: all 300ms;
+}
+
+.border-bottom-only:focus {
+  border-color: var(--color-primary-brand);
+  border-bottom-width: 2px;
+}
