@@ -51,7 +51,7 @@ export default function VenueSchedule() {
               <div className="bg-surface-container-low p-6 rounded-lg ring-1 ring-outline-variant/10 shadow-sm relative hover:shadow-md transition-shadow">
                 <div className="absolute top-1/2 -right-2 -translate-y-1/2 w-4 h-4 bg-surface-container-low rotate-45 border-r border-t border-outline-variant/10 hidden md:block"></div>
                 <p className="text-base text-on-surface/80 font-light font-body leading-relaxed">
-                  Tiệc báo hỷ và nghi thức trao nhẫn chính thức. Kính mời quý khách đến dự tiệc tối lúc 17h30 tại trung tâm tiệc cưới.
+                  Tiệc báo hỷ và nghi thức trao nhẫn chính thức. Kính mời quý khách đến dự lúc 12h30 tại nhà trai.
                 </p>
               </div>
             </div>

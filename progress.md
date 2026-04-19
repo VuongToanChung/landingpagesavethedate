@@ -75,7 +75,7 @@
 
 ### Triển khai (Deployment)
 - [x] Build production: `npm run build` (Hoàn thành - thư mục `dist/` đã sẵn sàng)
-- [ ] Deploy lên **Vercel** hoặc **Netlify** để có link chia sẻ
+- [x] Deploy lên **Vercel** liên kết với GitHub
 - [ ] Cấu hình domain tùy chỉnh (nếu cần)
 
 ---
