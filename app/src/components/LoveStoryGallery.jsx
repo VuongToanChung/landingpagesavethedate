@@ -83,18 +83,29 @@ export default function LoveStoryGallery() {
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
         >
-          {slideImages.map((src, i) => (
-            <img
-              key={src}
-              src={src}
-              alt={`Love Story ${i + 1}`}
-              decoding="async"
-              style={{ imageRendering: 'high-quality' }}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-                i === current ? 'opacity-100 z-10' : 'opacity-0 z-0'
-              }`}
-            />
-          ))}
+          {slideImages.map((src, i) => {
+            // Only render current, next, and previous for smooth transition and preloading
+            // This prevents the browser from downloading all 15 images at once
+            const isVisible = i === current;
+            const isNext = i === (current + 1) % slideImages.length;
+            const isPrev = i === (current - 1 + slideImages.length) % slideImages.length;
+            
+            if (!isVisible && !isNext && !isPrev) return null;
+
+            return (
+              <img
+                key={src}
+                src={src}
+                alt={`Love Story ${i + 1}`}
+                decoding="async"
+                loading={i === 0 ? "eager" : "lazy"}
+                style={{ imageRendering: 'high-quality' }}
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                  isVisible ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                }`}
+              />
+            );
+          })}
 
           {/* Gradient overlay bottom */}
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/40 to-transparent pointer-events-none z-20" />
