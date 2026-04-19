@@ -8,6 +8,7 @@ export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isReady, setIsReady] = useState(false);
   const [attempted, setAttempted] = useState(false);
+  const [hasManuallyToggled, setHasManuallyToggled] = useState(false);
 
   useEffect(() => {
     // Load YouTube IFrame API
@@ -31,6 +32,24 @@ export default function MusicPlayer() {
       }
     };
   }, []);
+
+  // Handle browser autoplay policy by waiting for first user interaction
+  useEffect(() => {
+    if (!isReady || isPlaying || hasManuallyToggled) return;
+
+    const tryAutoPlay = () => {
+      if (playerRef.current && typeof playerRef.current.playVideo === 'function') {
+        playerRef.current.playVideo();
+      }
+    };
+
+    const events = ['click', 'scroll', 'touchstart'];
+    events.forEach(e => window.addEventListener(e, tryAutoPlay, { once: true, passive: true }));
+
+    return () => {
+      events.forEach(e => window.removeEventListener(e, tryAutoPlay));
+    };
+  }, [isReady, isPlaying, hasManuallyToggled]);
 
   function initPlayer() {
     playerRef.current = new window.YT.Player(iframeContainerRef.current, {
@@ -74,6 +93,7 @@ export default function MusicPlayer() {
 
   const togglePlay = () => {
     if (!playerRef.current || !isReady) return;
+    setHasManuallyToggled(true);
     if (isPlaying) {
       playerRef.current.pauseVideo();
     } else {
