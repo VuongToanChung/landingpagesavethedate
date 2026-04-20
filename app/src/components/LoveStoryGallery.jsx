@@ -70,7 +70,7 @@ export default function LoveStoryGallery() {
 
   return (
     <section className="py-24 bg-surface-primary overflow-hidden border-t border-outline-variant/10">
-      <div className="max-w-4xl mx-auto px-6 mb-12 text-center">
+      <div className="max-w-4xl mx-auto px-6 mb-12 text-center reveal-gallery">
         <span className="font-label text-xs tracking-[0.4em] uppercase text-secondary-brand block mb-4">Lời Lưu Bút</span>
         <h2 className="text-4xl md:text-5xl font-headline italic text-primary-brand">Câu Chuyện Tình Yêu</h2>
       </div>

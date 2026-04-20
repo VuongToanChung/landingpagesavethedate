@@ -1,9 +1,19 @@
+import useScrollReveal from '../hooks/useScrollReveal';
+
 export default function VenueSchedule() {
+  const { ref: titleRef, isVisible: titleVisible } = useScrollReveal();
+  const { ref: item1Ref, isVisible: item1Visible } = useScrollReveal();
+  const { ref: item2Ref, isVisible: item2Visible } = useScrollReveal();
   return (
     <section className="py-24 md:py-32 bg-surface-primary border-t border-outline-variant/10">
       <div className="max-w-4xl mx-auto px-6">
 
-        <div className="text-center mb-20 relative">
+        <div
+          ref={titleRef}
+          className={`text-center mb-20 relative transition-all duration-700 ${
+            titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          }`}
+        >
           <span className="font-label text-xs md:text-sm tracking-[0.4em] uppercase text-secondary-brand block mb-4">Timeline Sự Kiện</span>
           <h2 className="text-4xl md:text-5xl font-headline italic text-primary-brand relative inline-block">
             Lịch Trình Chi Tiết
@@ -14,7 +24,12 @@ export default function VenueSchedule() {
         <div className="space-y-20 relative before:absolute before:inset-0 before:ml-5 md:before:mx-auto md:before:translate-x-0 before:-translate-x-px md:before:w-0.5 before:w-px before:h-[95%] before:bg-gradient-to-b before:from-primary-brand/50 before:via-outline-variant/30 before:to-transparent">
 
           {/* Lễ Ăn Hỏi */}
-          <div className="relative flex flex-col md:flex-row items-center justify-between group">
+          <div
+            ref={item1Ref}
+            className={`relative flex flex-col md:flex-row items-center justify-between group transition-all duration-700 ${
+              item1Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
             {/* Timeline dot */}
             <div className="absolute left-5 md:left-1/2 -translate-x-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-surface-primary border-2 border-primary-brand z-10 group-hover:scale-110 transition-transform">
               <div className="w-2.5 h-2.5 bg-primary-override rounded-full" />
@@ -36,7 +51,12 @@ export default function VenueSchedule() {
           </div>
 
           {/* Lễ Thành Hôn */}
-          <div className="relative flex flex-col md:flex-row-reverse items-center justify-between group">
+          <div
+            ref={item2Ref}
+            className={`relative flex flex-col md:flex-row-reverse items-center justify-between group transition-all duration-700 ${
+              item2Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
             {/* Timeline dot */}
             <div className="absolute left-5 md:left-1/2 -translate-x-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-surface-primary border-2 border-primary-brand z-10 group-hover:scale-110 transition-transform">
               <div className="w-2.5 h-2.5 bg-primary-override rounded-full" />

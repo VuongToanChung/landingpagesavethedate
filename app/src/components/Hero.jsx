@@ -1,4 +1,8 @@
+import useScrollReveal from '../hooks/useScrollReveal';
+
 export default function Hero() {
+  const { ref: textRef, isVisible: textVisible } = useScrollReveal({ threshold: 0.1 });
+
   return (
     <header className="relative min-h-screen flex flex-col items-center justify-center pt-6 pb-24 px-6 bg-surface-primary">
       {/* Editorial Image Layout */}
@@ -11,7 +15,7 @@ export default function Hero() {
             style={{ imageRendering: 'high-quality' }}
             alt="Wedding Background"
             src="/header/header_1.jpg"
-            fetchpriority="high"
+            fetchPriority="high"
             decoding="sync"
           />
         </div>
@@ -23,13 +27,18 @@ export default function Hero() {
             style={{ imageRendering: 'high-quality' }}
             alt="Wedding Foreground"
             src="/header/header_2.jpg"
-            fetchpriority="high"
+            fetchPriority="high"
             decoding="sync"
           />
         </div>
       </div>
       
-      <div className="text-center max-w-2xl px-4 z-20 mt-4 md:mt-12">
+      <div
+        ref={textRef}
+        className={`text-center max-w-2xl px-4 z-20 mt-4 md:mt-12 transition-all duration-1000 ${
+          textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
         <span className="font-label text-xs tracking-[0.4em] uppercase text-secondary-brand mb-6 block">Save the Date</span>
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-headline text-primary-brand mb-8 leading-tight">
           Phạm Minh <span className="text-3xl md:text-5xl align-middle mx-2 font-light text-tertiary-brand italic">&</span> Phạm Hòa

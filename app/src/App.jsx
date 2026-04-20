@@ -2,20 +2,26 @@ import Hero from './components/Hero';
 import CalendarSection from './components/CalendarSection';
 import FamilySection from './components/FamilySection';
 import VenueSchedule from './components/VenueSchedule';
+import Story from './components/Story';
 import LoveStoryGallery from './components/LoveStoryGallery';
+import MapSection from './components/MapSection';
 import CountdownQR from './components/CountdownQR';
 import MusicPlayer from './components/MusicPlayer';
+import FallingPetals from './components/FallingPetals';
 
 function App() {
   return (
     <main className="min-h-screen bg-surface-primary selection:bg-primary-container selection:text-primary-brand w-full overflow-x-hidden">
+      <FallingPetals />
       <Hero />
       <CalendarSection />
       <FamilySection />
       <VenueSchedule />
+      <Story />
       <LoveStoryGallery />
+      <MapSection />
       <CountdownQR />
-      
+
       {/* Footer */}
       <footer className="footer bg-inverse-surface text-surface-primary pt-24 pb-12 text-center flex flex-col items-center select-none -mt-4">
         <h3 className="font-headline text-3xl mb-4 italic text-outline-variant/60">Minh & Hòa</h3>

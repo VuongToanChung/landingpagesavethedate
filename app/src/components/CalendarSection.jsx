@@ -1,4 +1,7 @@
+import useScrollReveal from '../hooks/useScrollReveal';
+
 export default function CalendarSection() {
+  const { ref, isVisible } = useScrollReveal();
   const days = ["CN", "T2", "T3", "T4", "T5", "T6", "T7"];
   // May 2026 starts on Friday (Index 5 in CSS/JS days, or 6th element)
   const emptyCells = Array(5).fill(null);
@@ -6,7 +9,12 @@ export default function CalendarSection() {
 
   return (
     <section className="py-24 bg-surface-container-low" id="calendar">
-      <div className="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
+      <div
+        ref={ref}
+        className={`max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16 transition-all duration-700 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
 
         <div className="w-full md:w-1/2">
           <h2 className="text-3xl md:text-4xl font-headline italic text-primary-brand mb-8 text-center md:text-left">Tháng 5, 2026</h2>

@@ -1,7 +1,15 @@
+import useScrollReveal from '../hooks/useScrollReveal';
+
 export default function FamilySection() {
+  const { ref, isVisible } = useScrollReveal();
   return (
     <section className="py-20 bg-surface-primary border-t border-outline-variant/10">
-      <div className="max-w-5xl mx-auto px-6">
+      <div
+        ref={ref}
+        className={`max-w-5xl mx-auto px-6 transition-all duration-700 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
         <h2 className="text-center text-xs md:text-sm font-label uppercase tracking-[0.3em] text-outline-variant mb-16">
           Trân Trọng Báo Tin Vui
         </h2>
