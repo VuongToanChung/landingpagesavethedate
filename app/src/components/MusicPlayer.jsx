@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-const VIDEO_ID = 'sBEWFGVxS5w';
+const VIDEO_ID = 'IOe0tNoUGv8';
 
 export default function MusicPlayer() {
   const playerRef = useRef(null);
@@ -56,6 +56,7 @@ export default function MusicPlayer() {
       videoId: VIDEO_ID,
       playerVars: {
         autoplay: 1,
+        start: 20,
         controls: 0,
         disablekb: 1,
         fs: 0,
@@ -74,7 +75,7 @@ export default function MusicPlayer() {
           try {
             e.target.playVideo();
             setAttempted(true);
-          } catch (_) {}
+          } catch (_) { }
         },
         onStateChange: (e) => {
           // YT.PlayerState: PLAYING = 1, PAUSED = 2, ENDED = 0
