@@ -63,7 +63,7 @@ function MilestoneItem({ milestone, index }) {
           <img
             src={milestone.image}
             alt={milestone.title}
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
             loading="lazy"
           />
         </div>
