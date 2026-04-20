@@ -2,38 +2,38 @@ import useScrollReveal from '../hooks/useScrollReveal';
 
 const milestones = [
   {
-    date: 'Tháng 9, 2019',
-    title: 'Lần Đầu Gặp Gỡ',
+    date: 'September, 2019',
+    title: 'First Meeting',
     description:
-      'Một buổi chiều thu tình cờ, hai người gặp nhau qua một người bạn chung. Cuộc trò chuyện đầu tiên kéo dài mãi không muốn dừng — như thể đã quen nhau từ rất lâu.',
+      'On a random autumn afternoon, we met through a mutual friend. Our first conversation went on for hours — as if we had known each other for a lifetime.',
     image: '/slide/DSC02922ok.jpg',
   },
   {
-    date: 'Tháng 12, 2019',
-    title: 'Chính Thức Yêu Nhau',
+    date: 'December, 2019',
+    title: 'Officially Together',
     description:
-      'Sau ba tháng nhắn tin mỗi ngày và những buổi hẹn cà phê cuối tuần, Minh đã nói lời tỏ tình dưới hàng cây bàng lá đỏ. Câu trả lời là một nụ cười và cái gật đầu nhẹ.',
+      'After three months of daily texts and weekend coffee dates, Minh confessed his feelings under the red autumn leaves. The answer was a gentle smile and a soft nod.',
     image: '/slide/DSC02974ok.jpg',
   },
   {
-    date: 'Năm 2020 – 2023',
-    title: 'Cùng Nhau Trưởng Thành',
+    date: '2020 – 2023',
+    title: 'Growing Together',
     description:
-      'Yêu xa, yêu gần, cùng vượt qua những ngày giãn cách. Mỗi cuộc gọi video đêm khuya, mỗi chuyến xe về quê cuối tuần đều là minh chứng cho tình yêu bền bỉ.',
+      'Through long distance and lockdowns, we stood by each other. Every late-night video call, every weekend trip home was proof that our love could endure anything.',
     image: '/slide/DSC03043ok.jpg',
   },
   {
-    date: 'Tháng 2, 2025',
-    title: 'Lời Cầu Hôn',
+    date: 'February, 2025',
+    title: 'The Proposal',
     description:
-      'Trong một buổi tối giản dị nhưng đầy xúc động, Minh đã quỳ gối và hỏi: "Em có muốn cùng anh đi hết cuộc đời này không?" Hòa đã khóc và nói "Có".',
+      'On a simple yet deeply emotional evening, Minh got down on one knee and asked: "Will you spend the rest of your life with me?" Hoa cried and said "Yes."',
     image: '/slide/DSC03350ok.jpg',
   },
   {
-    date: '02 Tháng 05, 2026',
-    title: 'Về Chung Một Nhà',
+    date: 'May 02, 2026',
+    title: 'Becoming One',
     description:
-      'Và giờ đây, chúng tôi sẵn sàng bước vào chương mới đẹp nhất — cùng nhau xây dựng một mái ấm, một gia đình nhỏ tràn ngập yêu thương.',
+      'And now, we are ready to begin the most beautiful chapter — building a home, a little family filled with love and warmth.',
     image: '/slide/DSC03602ok.jpg',
   },
 ];
@@ -102,10 +102,10 @@ export default function Story() {
           }`}
         >
           <span className="font-label text-xs md:text-sm tracking-[0.4em] uppercase text-secondary-brand block mb-4">
-            Chuyện Của Chúng Mình
+            Our Story
           </span>
           <h2 className="text-4xl md:text-5xl font-headline italic text-primary-brand relative inline-block">
-            Hành Trình Yêu Thương
+            A Journey of Love
           </h2>
           <div className="absolute left-1/2 -bottom-6 -translate-x-1/2 w-12 h-1 bg-outline-variant/20 rounded-full" />
         </div>
